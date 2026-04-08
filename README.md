@@ -1,5 +1,7 @@
 # Snake Arena
 
+Licensed under the **MIT License**. See [LICENSE](./LICENSE).
+
 A TypeScript monorepo for a modern multiplayer Snake game with:
 
 - **Solo** play
@@ -124,4 +126,6 @@ npm run typecheck
 
 ## License
 
-No license file is included yet.
+This project is licensed under the **MIT License**.
+
+See [LICENSE](./LICENSE) for the full text.
