@@ -1,0 +1,15 @@
+{
+  "name": "snake-arena",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @snake/client && npm run build -w @snake/server",
+    "dev:client": "npm run dev -w @snake/client",
+    "dev:server": "npm run dev -w @snake/server",
+    "typecheck": "npm run typecheck -w @snake/shared && npm run typecheck -w @snake/client && npm run typecheck -w @snake/server"
+  }
+}
