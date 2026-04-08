@@ -4,7 +4,7 @@ import type { SimulationSnapshot } from "./types";
 export function roomStateToSnapshot(room: RoomState): SimulationSnapshot {
   const now = Date.now();
   const status = room.status === "countdown" ? "countdown" : room.status === "result" ? "result" : "playing";
-  const results = [...room.players]
+  const fallbackResults = [...room.players]
     .map((player) => ({
       playerId: player.playerId,
       name: player.name,
@@ -20,6 +20,7 @@ export function roomStateToSnapshot(room: RoomState): SimulationSnapshot {
       ...entry,
       rank: index + 1
     }));
+  const results = room.resultEntries && room.resultEntries.length > 0 ? room.resultEntries : fallbackResults;
 
   return {
     timeMs: now,

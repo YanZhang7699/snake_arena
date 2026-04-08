@@ -66,6 +66,7 @@ export interface RoomState {
   countdownRemainingMs: number;
   endsAt: number;
   winnerId?: string;
+  resultEntries?: ResultEntry[];
 }
 
 export interface DirectionInput {

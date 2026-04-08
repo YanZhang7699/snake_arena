@@ -54,7 +54,7 @@ export class GameEngine {
       startedAt: 0,
       seed: this.hash(roomId) ^ now
     };
-    this.players.push(this.makePlayer(hostId, hostName, skinId, now, 0, true));
+    this.players.push(this.makePlayer(hostId, hostName, skinId, now, 0, matchConfig.playType === "solo"));
     this.syncPublicState(now);
   }
 
@@ -571,7 +571,8 @@ export class GameEngine {
       items: this.state.items.map((item) => ({ ...item })),
       countdownRemainingMs: this.state.countdownRemainingMs,
       endsAt: this.state.endsAt,
-      winnerId: this.state.winnerId
+      winnerId: this.state.winnerId,
+      resultEntries: this.state.resultEntries.map((entry) => ({ ...entry }))
     };
   }
 
